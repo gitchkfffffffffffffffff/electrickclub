@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Электрик на дом</title>
+    <title>Электрик Иван Сафронов</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -94,9 +94,6 @@
             margin-bottom: 10px;
             border-radius: 5px;
         }
-        .download-vpn {
-            margin-top: 20px;
-        }
         .review-item {
             background-color: #333333;
             padding: 20px;
@@ -113,7 +110,6 @@
         <a href="#home">Главная</a>
         <a href="#contact">Контакты</a>
         <a href="#portfolio">Портфолио</a>
-        <a href="#download-vpn">Скачать VPN</a>
     </div>
     <div class="container">
         <div id="home" class="page">
@@ -139,11 +135,6 @@
                 <h3>Поездка</h3>
                 <p>Сервис поездки для быстрого решения ваших электрических вопросов.</p>
             </div>
-        </div>
-        <div id="download-vpn" class="page download-vpn">
-            <h2>Скачать VPN</h2>
-            <p>Ссылка на скачивание VPN:</p>
-            <a href="https://example.com/vpn.zip" download>Скачать VPN</a>
         </div>
         <div id="reviews" class="page reviews">
             <h2>Отзывы</h2>
@@ -215,6 +206,21 @@
                 `;
                 document.getElementById('reviews-container').appendChild(newReviewElement);
             });
+        });
+
+        // Плавное изменение цвета фона при прокрутке страницы
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+            if (scrollPercentage > 50) {
+                document.body.style.backgroundColor = '#333333';
+            } else {
+                document.body.style.backgroundColor = '#121212';
+            }
         });
     </script>
 </body>
